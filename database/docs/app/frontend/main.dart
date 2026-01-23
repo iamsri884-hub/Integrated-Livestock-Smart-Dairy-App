@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,10 +68,17 @@ class LoginScreen extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Login'),
-              ),
+            ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const DashboardScreen(role: 'farmer'),
+      ),
+    );
+  },
+  child: const Text('Login'),
+),
             ],
           ),
         ),
