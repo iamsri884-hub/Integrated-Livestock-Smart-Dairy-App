@@ -1,3 +1,4 @@
+import 'dashboard.dart';
 import 'package:flutter/material.dart';
 import 'livestock.dart';
 
@@ -31,13 +32,15 @@ class DashboardScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (title == 'Livestock') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const LivestockScreen(),
-            ),
-          );
-        }
+          onPressed: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => const DashboardScreen(),
+    ),
+  );
+},
+
       },
       child: Card(
         elevation: 4,
