@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Smart Dairy App',
-      home: const Scaffold(
-        body: Center(child: Text('Smart Dairy App')),
-      ),
+      home: const DashboardScreen(),
     );
   }
 }
