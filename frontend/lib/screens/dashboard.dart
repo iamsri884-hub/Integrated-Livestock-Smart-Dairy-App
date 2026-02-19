@@ -3,7 +3,7 @@ import 'livestock.dart';
 import 'milk.dart';
 import 'products.dart';
 import 'profile.dart';
-import 'market.dart';
+import 'market_analysis.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -15,11 +15,11 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int currentIndex = 0;
 
-  final screens = [
+  final List<Widget> screens = const [
     LivestockScreen(),
     MilkScreen(),
     ProductsScreen(),
-    MarketScreen(),
+    MarketAnalysisScreen(),
     ProfileScreen(),
   ];
 
@@ -30,6 +30,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
         onTap: (index) {
           setState(() {
             currentIndex = index;
@@ -43,7 +45,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), label: "Products"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.trending_up), label: "Market"),
+              icon: Icon(Icons.show_chart), label: "Market"),
           BottomNavigationBarItem(
               icon: Icon(Icons.person), label: "Profile"),
         ],
