@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 import 'livestock.dart';
 import 'milk.dart';
 import 'products.dart';
@@ -15,7 +16,8 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int currentIndex = 0;
 
-  final List<Widget> screens = const [
+  final List<Widget> screens = [
+    HomeScreen(),
     LivestockScreen(),
     MilkScreen(),
     ProductsScreen(),
@@ -38,6 +40,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
           });
         },
         items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.pets), label: "Livestock"),
           BottomNavigationBarItem(
